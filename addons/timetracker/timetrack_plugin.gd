@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 	if is_instance_valid(label):
 		open_time += delta
 		var hour: String = str(int(open_time / 3600.0)).pad_zeros(2)
-		var minute: String = str(int(open_time / 60.0)).pad_zeros(2)
+		var minute: String = str(int((fmod(open_time, 3600)) / 60.0)).pad_zeros(2)
 		var second: String = str(int(fmod(open_time, 60))).pad_zeros(2)
 		
 		label.text = str(hour, ":", minute, ":", second)
