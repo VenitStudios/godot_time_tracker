@@ -40,7 +40,6 @@ func _save_external_data() -> void:
 	
 	var efs := EditorInterface.get_resource_filesystem()
 	efs.update_file(SAVE_FILE)
-	efs.reimport_files([SAVE_FILE])
 
 func _process(delta: float) -> void:
 	if is_instance_valid(label):
